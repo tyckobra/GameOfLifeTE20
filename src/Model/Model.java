@@ -1,32 +1,33 @@
 package Model;
+import Model.Cell;
 import View.*;
 import java.awt.*;
+import java.awt.Shape;
 import java.util.ArrayList;
 
 public class Model {
 
     int width;
     int height;
+    Cell = cell;
 
-    public Model(int width, int height) {
-        this.width = width;
-        this.height = height;
+    public Model(int w, int h) {
+        this.width = w;
+        this.height = h;
+        this.cell = new Cell(10,10);
     }
 
     public void update() {
-        return;
-    }
-
-    public Point[] getPoints() {
-        ArrayList<Point> points = new ArrayList<Point>();
-        for (Cell c : cells) {
-            if (c.isAlive()) {
-                points.add(c.getPoint());
-            }
-        }
+        cell.update();
     }
 
     public Shape[] getShapes() {
-            return (Shape[])pixelsToDisplay;
+        if (cell.isAlive()) {
+            Shape[] points = new Shape[1];
+            points[0] = cell.getPoint();
+            return points;
+        } else {
+            return new Shape[0];
+        }
     }
 }
