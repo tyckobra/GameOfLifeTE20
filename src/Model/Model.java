@@ -9,23 +9,24 @@ public class Model {
 
     int width;
     int height;
-    Cell c;
+
+    Cell Cells;
 
     public Model(int w, int h) {
         this.width = w;
         this.height = h;
-        this.c = new Cell(1,1);
+        this.Cells = new Cell(12,20);
     }
 
     public void update() {
-        c.update();
+        Cells.update();
     }
 
     public Shape[] getShapes() {
         ArrayList<Point> points = new ArrayList<Point>();
 
-        if (c.isAlive()) {
-            points.add(c.getPoint());
+        if (Cells.isAlive()) {
+            points.add(Cells.getPoint());
         }
 
         Point[] pixelsToDisplay = new Point[points.size()];

@@ -14,7 +14,20 @@ public class Cell {
     }
 
     public void update() {
-
+        for (int neighbours = Cell) {
+            if (neighbours= 0<1) {
+                !isAlive;
+            }
+            if (neighbours = 2) {
+                return;
+            }
+            if (neighbours = 3) {
+                isAlive;
+            }
+            if (neighbours = 4<8 ){
+                !isAlive
+            }
+        }
     }
 
     public boolean isAlive() {
